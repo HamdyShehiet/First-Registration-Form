@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --mainPaddingLeft: 8px;
+    --bodyBgColor:linear-gradient(to top right,rgba(74, 158, 154, 0.973),rgba(108, 209, 204, 0.767));
+    --formBgColor:rgb(255, 255, 255);
+    --textColor:#a3a3a3;
+    --textLabelColor:#464545;
+    --inputColor:#363636;
+    --buttonBgColor:rgb(36, 114, 216);
+    --buttonColor:rgb(252, 249, 249);
+    --hovColor:rgb(37, 102, 187);
+    --shadowColor:#808080;
+    --outlineColor:#dad8d8 ;
+}
+body{
+    background-image: var(--bodyBgColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+form{
+    background-color: var(--formBgColor);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    box-shadow: 1px 2px 4px  var(--shadowColor);
+    border-radius: 6px;
+}
+form h2{
+    padding-left: var(--mainPaddingLeft);
+    position: relative;
+}
+form h2::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 8px;
+    bottom: 0;
+    background-color: var(--buttonBgColor);
+    border-radius: 6px;
+}
+form h3{
+    color: var(--textColor);
+}
+.personal-details ,.identity-details{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: var(--mainPaddingLeft);
+}
+.personal-details .fields ,.identity-details .fields{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    width: 100%;
+}
+.personal-details .fields .field,.identity-details .fields .field{
+    width: 275px;
+    display: inline-flex;
+    flex-direction: column;
+    gap:7px;
+}
+form input ,select ,.option{
+    width: calc(100% - 30px);
+    padding: 10px;
+    border-radius: 6px;
+    outline: 2px solid var(--outlineColor);
+    color: var(--textLabelColor);
+    background-color: transparent;
+    font-weight: 500;
+    font-size: .8em;
+}
+form input{
+    font-weight: 500;
+    font-size: .8em;
+}
+form input::placeholder ,select::placeholder ,.option{
+    color: var(--textColor);
+}
+form label{
+    color: var(--textLabelColor);
+    font-weight: 500;
+    font-size: .9em;
+}
+button{
+    display: inline-block;
+    width: 230px;
+    padding: 10px;
+    border-radius: 6px;
+    margin-left: var(--mainPaddingLeft);
+    background-color: var(--buttonBgColor);
+    color: var(--buttonColor);
+    margin-top: 10px;
+    font-size: 1em;
+}
+button:hover{
+    background-color: var(--hovColor);
+    scale: 1.01;
+}
+button i{
+    margin-left: 8px;
+}
+
+@media screen and (min-width:700px) and (max-width:910px){
+    body{
+        height:auto;
+    }
+    form{
+        gap: 10px;
+        border-radius: 0;
+    }
+    .personal-details .fields .field,.identity-details .fields .field{
+        width: calc(100% /2 - 10px);
+    }
+}
+@media screen and (min-width:0px) and (max-width:700px){
+    body{
+        height:auto;
+    }
+    form{
+        gap: 10px;
+        border-radius: 0;
+    }
+    .personal-details .fields .field,.identity-details .fields .field{
+        width: 100%;
+    }
+    form input ,select ,.option{
+        width: 100%;
+    }
+    button{
+        max-width: 100%;
+    }
+}
